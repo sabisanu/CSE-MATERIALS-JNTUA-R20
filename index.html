@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="whitesmoke">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JNTUA CSE-MATERIALS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--title-->
+
+<section id="title">
+  <div class="container">
+  
+<div class="px-4 pt-5 my-2 text-center border-bottom"> 
+  <h1 class="display-4 fw-bold text-body-emphasis">Viswam Engineering College (CSE-Materials)R20 regulations-JNTUA</h1>
+  <div class="col-lg-6 mx-auto"> 
+   <p class="lead mb-4"> *Welcome to the CSE Materials website! This website is specially designed for students of JNTUA following the R20 regulations. It provides easy and direct access to official JNTUA materials for all CSE subjects, making it simple for students—especially those with backlogs—to find what they need without asking friends or searching around. Just click on your semester, select the subject, and you'll be redirected to the official resources. Quick, easy, and helpful for every CSE student!*</p> 
+    </div>
+
+    <div class="overflow-hidden" style="max-height: 30vh;"> 
+      <div class="container px-3 mt-2"> 
+        <img src="https://media.licdn.com/dms/image/v2/D5616AQGY_AIpBybyAQ/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1702012606501?e=2147483647&v=beta&t=Cu-OQZkDztb1k-Eafn0d5AJYj70sGPXTQT-LD4MH7Ko" height="600"  class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy"> 
+      </div>
+     </div>
+     </div>
+<!--sems-->
+<h2 class="fw-bold">Semesters:</h2>
+  <div class="d-flex gap-2 justify-content-center py-5">
+      
+    <div class="btn-group">
+       <button class="btn btn-primary rounded-pill px-3" onclick="showSubjects('1-1')">1-1</button>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary rounded-pill px-3" onclick="showSubjects('1-2')">1-2</button>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-success rounded-pill px-3" onclick="showSubjects('2-1')">2-1</button>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-danger rounded-pill px-3" onclick="showSubjects('2-2')">2-2</button>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-warning rounded-pill px-3" onclick="showSubjects('3-1')">3-1</button>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-dark rounded-pill px-3" onclick="showSubjects('3-2')">3-2</button>
+    </div>
+       
+      
+       </div>
+<!-- Subjects container -->
+<div id="subjects-container" class="container mt-4"></div>
+</section>
+
+<style>
+  /* Remove underline from links inside subjects list */
+  #subjects-container a {
+    text-decoration: none;
+    font-style: italic;
+    font-size: x-large;
+  }
+</style>
+<script>
+  // Example subjects data
+  const subjects = {
+    '1-1': [
+      { name: 'C-Programming & Data Structures(CPDS)', url: 'https://drive.google.com/file/d/1W_Xgl0FXnd1G_03WsXSVOV7x2gnUllVU/view?usp=sharing' },
+      { name: 'Linear Algebra and Calculas(M1)', url: 'https://drive.google.com/file/d/1vcHQt4vH5SkAIp5A8ZV8xkdSBXjf1sKg/view?usp=sharing' },
+      { name: 'Chemistry', url: 'https://www.forum.universityupdates.in/attachments/jntua-chemistry-r20-notes-pdf.28866/' },
+      { name: 'Basic Electrical & Electronic Enginerring(BEEE)', url: 'https://drive.google.com/file/d/1c3ufFNJ1zxBOGjarLGzCdI5H72JdrVz-/view?usp=sharing' },
+    ],
+    '1-2': [
+     { name:'Communicative English(CE)', url:'https://www.forum.universityupdates.in/attachments/jntua-communicative-english-notes-r20-pdf.28876/'},
+     { name:'Applied Physics(Ap)' ,url:'https://drive.google.com/file/d/1rOGhsP-NnUWK6EMCeQ2VE0cJH9ME1O4X/view?usp=sharing'},
+     { name:'Python Programming & Data Science(ppds)',url:'https://drive.google.com/file/d/12byVyW1DL8tRK4clAb2iQzYmshw39e1k/view?usp=sharing'},
+     { name:'Probability & Statistics(M2)', url:'https://www.scribd.com/document/859756422/JNTUA-Probability-and-Statistics-Notes-R20'},
+     { name:'Engineering Drawing(ED)', url:'https://www.forum.universityupdates.in/attachments/jntua-engineering-drawing-notes-r20-pdf.28880'},
+    ],
+    '2-1':[
+      { name :'Computer Organization',url:'https://www.forum.universityupdates.in/attachments/jntua-computer-organization-notes-r20-pdf.28891/'},
+      { name :'UHV',url:'https://www.forum.universityupdates.in/attachments/jntua-universal-human-values-notes-r20-eee-pdf.29217/'},
+      { name :'oop-Java', url:'https://www.forum.universityupdates.in/attachments/jntua-object-oriented-programming-through-java-notes-r20-pdf.28890/'},
+      { name :'Discrete Mathmatics & Graph Theory(M3)', url:'https://www.forum.universityupdates.in/attachments/jntua-discrete-mathematics-graph-theory-ppt-notes-r20-pdf.28886/'},
+      { name :'Advanced Data Structure & Algorithm',url:'https://www.forum.universityupdates.in/attachments/jntua-advanced-data-structures-algorithms-notes-r20-pdf.28889/'},
+      { name :'Digital Electronics & Microprocessors(DEMP)',url:'https://www.forum.universityupdates.in/attachments/jntua-digital-electronics-microprocessors-ppt-notes-r20-pdf.28887/'},
+    ],
+    '2-2':[
+      {name:'Data Base Management System(DBMS)',url:'https://www.forum.universityupdates.in/attachments/jntua-database-management-systems-notes-r20-pdf.28897/'},
+      { name:'Operating System(OS)',url:'https://www.forum.universityupdates.in/attachments/jntua-operating-systems-notes-r20-pdf.28899/'},
+      {name:'Organizational Behaviour(OB)', url:'https://mdu.ac.in/UpFiles/UpPdfFiles/2021/Jul/4_07-01-2021_12-32-15_Organizational%20Behaviour.pdf'},
+      {name:'Software Engineering(SE)',url:'https://www.forum.universityupdates.in/attachments/jntua-software-engineering-notes-r20-pdf.28900/'},
+    ],
+    '3-1':[
+      {name:'Computer Networks',url:'https://www.forum.universityupdates.in/attachments/jntua-computer-networks-notes-r20-pdf.28909/'},
+      {name:'AI',url:'https://www.forum.universityupdates.in/attachments/artificial-intelligence-notes-pdf.23333/'},
+      {name:'MATLAB Programming for Engineers',url:'https://vemu.org/uploads/lecture_notes/30_12_2019_1363038417.pdf'},
+      {name:'SPM',url:'https://www.forum.universityupdates.in/attachments/jntua-software-project-management-notes-r20-pdf.28910/'},
+    ],
+    '3-2':[
+      {name:'Basic VLSI design',url:'https://drive.google.com/file/d/1lICP3JNbfnb8zjuNMJpWRmQSZwrj1mon/view?usp=sharing'},
+      {name:'Machine Learning',url:'https://drive.google.com/file/d/13TSgICB799Gb50MP9uqM3U8uHNdq9b5d/view?usp=sharing'},
+      {name:'IOT',url:'https://drive.google.com/file/d/1S8VwSYazXe284X_88LFhsGZzryPSyDtf/view?usp=sharing'},
+      {name:'software Testing',url:'https://www.scribd.com/document/476842371/STNOTES-converted'},
+      {name:'Compiler Design', url:'https://www.slideshare.net/slideshow/jntua-compiler-design-notes-pdf-for-all-units/273878303'},
+    ],
+    // Add more semesters and subjects as needed
+  };
+
+  function showSubjects(sem) {
+    const container = document.getElementById('subjects-container');
+    if (!subjects[sem]) {
+      container.innerHTML = '<p>No subjects found for this semester.</p>';
+      return;
+    }
+    let html = `<h3 class="fw-bold">${sem} Subjects:</h3><ul class="list-group">`;
+    subjects[sem].forEach(sub => {
+      html += `<li class="list-group-item"><a href="${sub.url}" target="_blank">${sub.name}</a></li>`;
+    });
+    html += '</ul>';
+    container.innerHTML = html;
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
